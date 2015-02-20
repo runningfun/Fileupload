@@ -1,4 +1,4 @@
-package runningfun.web;
+package com.runningfun.web;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
