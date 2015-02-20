@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+
+    <title>File upload</title>
+</head>
+<body>
+Create Fileupload
+<h:form id="form" enctype="multipart/form-data" prependId="false">
+    <p>
+        <h:inputFile id="file" value="#{fileUploadBean.uploadedFile}">
+        </h:inputFile>
+    </p>
+    <br/>
+</h:form>
+</body>
+</html>
