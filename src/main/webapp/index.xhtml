@@ -2,12 +2,15 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"-->
 <!--"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
 <html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns="http://www.w3.org/1999/xhtml">
-<head lang="en">
+<h:head lang="en">
 
     <title>File upload</title>
-</head>
-<body>
+
+    <h:outputStylesheet library="css" name="table-style.css"/>
+</h:head>
+<h:body>
 <h:form id="form" enctype="multipart/form-data" prependId="false">
     <p>
         <h:inputFile id="file" value="#{fileUploadBean.uploadedFile}">
@@ -16,6 +19,29 @@
     <br/>
     <h:commandButton id="button" value="Upload" action="#{fileUploadBean.upload()}"></h:commandButton>
     <p id="textOutput">Text: #{fileUploadBean.text}</p>
+
+    <h1>JSF 2 dataTable example</h1>
+
+    <h:dataTable value="#{chat.chatMessageList}" var="m"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row"
+            >
+
+        <h:column>
+            <!-- column header -->
+            <f:facet name="header">Text</f:facet>
+            <!-- row record -->
+            #{m.text}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">Author</f:facet>
+            #{m.author}
+        </h:column>
+
+
+    </h:dataTable>
 </h:form>
-</body>
+</h:body>
 </html>
